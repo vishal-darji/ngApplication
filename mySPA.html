@@ -1,0 +1,47 @@
+<html>
+<head>
+
+	<script src="js/lib/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>	
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+	<link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css"/>
+
+	
+</head>
+<body>
+	<div ng-app="myApp" class="container-fluid">
+		<div class="row">
+			<div ng-controller="myController" class="col-sm-12" >
+				<h1><span class="glyphicon glyphicon-apple hiddn-xs" 
+				style="color:greenyellow">
+				
+				</span> {{myMessage}}  </h1>
+			
+			</div>	
+		</div>
+		
+
+		<div class="row" ng-controller="myController"> 
+
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<ul class="nav nav-pills nav-stacked">
+				  <li role="presentation" ng-class="{ active: getCurrentState('home')}"><a ui-sref='home'>Home</a></li>
+				  
+				  <li role="presentation" ng-class="{ active: getCurrentState('vegetables')}"><a ui-sref="vegetables">Vegetables</a></li>
+				  
+				  <li role="presentation" ng-class="{ active: getCurrentState('fruits')}"><a ui-sref="fruits">Fruits</a></li>
+				  
+				  <li role="presentation" ng-class="{ active: getCurrentState('grains')}"><a ui-sref="grains">Grains</a></li>
+				</ul>
+			</div>
+			
+		
+			<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"   ui-view>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
